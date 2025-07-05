@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>パスワードをお忘れですか？</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+    .forgot-box {
+      background: white;
+      padding: 2.5em 3em;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      color: #202124;
+      margin-bottom: 1em;
+    }
+    p {
+      margin: 1em 0;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #1a73e8;
+      color: white;
+      padding: 0.7em 1.5em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1.5em;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #1669c1;
+    }
+    .joke-container {
+      margin-top: 2em;
+      font-size: 0.95em;
+      color: #888;
+      font-style: italic;
+      min-height: 3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2em;
+      position: relative;
+    }
+    #diceBtn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
+      transition: transform 0.2s ease;
+    }
+    #diceBtn:hover {
+      transform: rotate(20deg);
+    }
+    /* シンプルなサイコロ風アイコン */
+    #diceBtn svg {
+      width: 100%;
+      height: 100%;
+      fill: #1a73e8;
+    }
+  </style>
+</head>
+<body>
+  <div class="forgot-box">
+    <h1>パスワードをお忘れですか？</h1>
+    <p>もしパスワードを忘れてしまったら、</p>
+    <p>安心してください！ここは秘密の再設定ページです。</p>
+    <p>（※実際には何もできません）</p>
+
+    <a href="index.html" class="btn">ログイン画面に戻る</a>
+
+    <div class="joke-container" id="jokeContainer">
+      「パスワード？それはきっと、宇宙の秘密よりも謎です…」
+    </div>
+
+    <button id="diceBtn" aria-label="ジョークを変える">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" >
+        <rect x="3" y="3" width="18" height="18" rx="4" ry="4" />
+        <circle cx="8" cy="8" r="1.5" fill="white"/>
+        <circle cx="16" cy="8" r="1.5" fill="white"/>
+        <circle cx="8" cy="16" r="1.5" fill="white"/>
+        <circle cx="16" cy="16" r="1.5" fill="white"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    const jokes = [
+      "パスワード？それはきっと、宇宙の秘密よりも謎です…",
+      "再設定メールは未来から届くかも？",
+      "次のパスワードは『password123』じゃないことを祈ろう。",
+      "パスワード忘れ？それは人生のスパイスだ。",
+      "もう一度試す前に、冷蔵庫の中も確認しよう。",
+      "パスワードは頭の中にある幻影かもしれない。",
+      "ヒント：パスワードは決して「password」じゃないはず。",
+      "忘れたパスワードは、タイムマシンが必要かも。",
+      "新しいパスワードはペットの名前にしよう（秘密だよ）。",
+      "パスワードを思い出すより、踊ったほうが早いかも。",
+      "パスワード再設定は忍耐と根気の試練。",
+      "パスワード？それは秘密の秘密。",
+      "あなたのパスワードは今日も冒険に出かけている。",
+      "昔のパスワードは時の彼方へ消えた…",
+      "パスワードは雲の上、虹の向こうにある。",
+      "覚えていない？それは誰もが通る道。",
+      "パスワード忘れは宇宙のミステリー。",
+      "もし思い出せたら、それは奇跡だ。",
+      "新しいパスワードは今日から作ろう。",
+      "最後に使ったパスワードは伝説の彼方に。",
+    ];
+
+    const jokeContainer = document.getElementById("jokeContainer");
+    const diceBtn = document.getElementById("diceBtn");
+
+    diceBtn.addEventListener("click", () => {
+      let current = jokeContainer.textContent;
+      let newJoke;
+      do {
+        newJoke = jokes[Math.floor(Math.random() * jokes.length)];
+      } while (newJoke === current);
+      jokeContainer.textContent = newJoke;
+    });
+  </script>
+</body>
+</html>
