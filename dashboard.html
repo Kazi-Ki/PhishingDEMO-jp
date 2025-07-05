@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>G-Port ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h1>ようこそ、<span id="email"></span> さん</h1>
+    <p>現在のセッション：アクティブ</p>
+    <p>アカウント状態：<span style="color: green;">正常</span></p>
+    <p> あなたは騙されています </p>
+    <p class="hint"> 一見すると普通にログインができているように見えますが、この裏では恐ろしいことが起こっています </p>
+    <button onclick="window.location.href='leak.html'+location.search">▶ 次へ</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    document.getElementById("email").textContent = params.get("email") || "（不明）";
+  </script>
+</body>
+</html>
