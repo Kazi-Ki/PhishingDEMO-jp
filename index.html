@@ -2,19 +2,23 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Portal ログイン</title>
+  <title>ログイン - G-Port</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="login-box">
-    <h1>Portal ログイン</h1>
+  <div class="google-login-box">
+    <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="logo" class="logo">
+    <h2>G-Port にログイン</h2>
     <form onsubmit="leakInfo(event)">
-      <label for="email">メールアドレス</label>
-      <input type="email" id="email" required>
-      <label for="password">パスワード</label>
-      <input type="password" id="password" required>
-      <button type="submit">ログイン</button>
+      <input type="email" id="email" placeholder="メールアドレスを入力" required>
+      <input type="password" id="password" placeholder="パスワードを入力" required>
+      <div class="actions">
+        <a href="#">パスワードをお忘れですか？</a>
+      </div>
+      <button type="submit">次へ</button>
     </form>
+    <p class="disclaimer">※これは教育目的の体験用サイトです。</p>
   </div>
 
   <script>
