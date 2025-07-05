@@ -12,7 +12,7 @@
 取得中...
     </pre>
     <p style="color: red; margin-top: 1em;">
-      ※これは教育目的の演出です。データは一切保存されていません。
+      ［実際には動作していません］
     </p>
   </div>
 
@@ -31,7 +31,7 @@
       "[✓] 認証済みユーザーの権限を取得中...",
       "[✓] セッションハイジャック成功",
       "",
-      "⚠️これは教育用の演出です。データは保存されていません。"
+      "⚠️演出です。データは保存されていません。"
     ];
 
     let i = 0;
@@ -39,11 +39,11 @@
       if (i < lines.length) {
         output.textContent += lines[i] + "\n";
         i++;
-        setTimeout(typeLine, 500); // 0.5秒ごとに表示
+        setTimeout(typeLine, 500);
       }
     }
     output.textContent = "";
-    setTimeout(typeLine, 800); // 初期ディレイ
+    setTimeout(typeLine, 800);
   </script>
 </body>
 </html>
