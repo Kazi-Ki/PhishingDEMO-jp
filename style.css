@@ -132,3 +132,50 @@ body {
 .dashboard button:hover {
   background-color: #1669c1;
 }
+
+.warning-box {
+  max-width: 700px;
+  margin: 3em auto;
+  padding: 2em 3em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.warning-box h1 {
+  margin-bottom: 1em;
+  color: #b00020;
+  text-align: center;
+}
+
+.warning-box h2 {
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+  color: #202124;
+}
+
+.warning-box ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+}
+
+.warning-box p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.btn-return {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-return:hover {
+  background-color: #1669c1;
+}
