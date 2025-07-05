@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>認証中...</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="google-login-box">
+    <h2>認証中...</h2>
+    <p>お待ちください</p>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "dashboard.html" + location.search;
+    }, 3000); // 3秒後に次へ
+  </script>
+</body>
+</html>
