@@ -15,20 +15,6 @@
 
 ---
 
-## ファイル構成
-
-```plaintext
-.
-├── index.html 偽ログイン画面（Google風UI）
-├── loading.html 認証中ローディング画面
-├── dashboard.html 偽ダッシュボード画面
-├── leak.html 情報漏洩演出と注意喚起
-├── warning.html フィッシング詐欺の危険性と対策解説
-└── style.css 共通スタイルシート
-
----
-
-
 ## 注意事項
 
 - 本サイトは教育目的で作成されており、入力情報は保存・送信されません。  
@@ -52,3 +38,17 @@
 - 情報セキュリティ教育の教材。  
 - 学校や企業での啓発活動。  
 - Webセキュリティ学習のデモ。
+
+
+## ファイル構成
+
+```plaintext
+.
+├── index.html 偽ログイン画面（Google風UI）
+├── loading.html 認証中ローディング画面
+├── dashboard.html 偽ダッシュボード画面
+├── leak.html 情報漏洩演出と注意喚起
+├── warning.html フィッシング詐欺の危険性と対策解説
+└── style.css 共通スタイルシート
+
+---
