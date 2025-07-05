@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>情報が漏洩しました</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="leak-box">
+    <h1>⚠️ あなたの情報は漏洩しました ⚠️</h1>
+    <pre id="leaked-info" class="console-output">
+取得中...
+    </pre>
+    <p style="color: red; margin-top: 1em;">
+      ※これは教育目的の演出です。データは一切保存されていません。
+    </p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const email = params.get("email") || "(未入力)";
+    const pass = params.get("pass") || "(未入力)";
+    const output = document.getElementById("leaked-info");
+
+    const lines = [
+      "[INFO] login_data.txt に保存しました。",
+      ` > Email: ${email}`,
+      ` > Password: ${pass}`,
+      "",
+      "[✓] データ送信完了",
+      "[✓] 認証済みユーザーの権限を取得中...",
+      "[✓] セッションハイジャック成功",
+      "",
+      "⚠️これは教育用の演出です。データは保存されていません。"
+    ];
+
+    let i = 0;
+    function typeLine() {
+      if (i < lines.length) {
+        output.textContent += lines[i] + "\n";
+        i++;
+        setTimeout(typeLine, 500); // 0.5秒ごとに表示
+      }
+    }
+    output.textContent = "";
+    setTimeout(typeLine, 800); // 初期ディレイ
+  </script>
+</body>
+</html>
